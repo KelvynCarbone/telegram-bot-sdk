@@ -356,6 +356,12 @@ trait Message
         return new MessageObject($response->getDecodedBody());
     }
 
+    public function send($entitie, array $params): MessageObject
+    {
+        $response = $this->post($entitie, $params);
+        return new MessageObject($response->getDecodedBody());
+    }
+
     /**
      * Send rounded square mp4 videos of up to 1 minute long. Use this method to send video messages.
      *
